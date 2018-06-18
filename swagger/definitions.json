@@ -1,0 +1,8 @@
+{
+  "GetMembers": {
+    "$ref": "../membership_route/swagger/definitions/GetMembers.json"
+  },
+  "GetMember": {
+    "$ref": "../membership_route/swagger/definitions/GetMember.json"
+  }
+}

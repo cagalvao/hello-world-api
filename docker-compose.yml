@@ -1,0 +1,11 @@
+version: '3'
+
+services:  
+  swagger:
+    image: ngimenez/ngimenez_swagger
+    volumes:
+      - ./swagger/volume:/app/swagger/doc
+    ports:
+      - '6789:80'
+    environment:
+      - URL=doc/swagger.json

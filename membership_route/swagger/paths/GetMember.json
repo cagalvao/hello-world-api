@@ -1,0 +1,30 @@
+{
+  "get": {
+    "description": "Retorna o membro integrante do ConfirmeNovo conforme ID passado",
+    "parameters": [
+      {
+        "in": "path",
+        "name": "id",
+        "description": "ID do membro integrante do ConfirmeNovo",
+        "required": true,
+        "schema": {
+          "type": "integer"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "SUCCESS",
+        "schema": {
+          "$ref": "#/definitions/GetMember"
+        }
+      },
+      "404": {
+        "description": "NOT FOUND"
+      },
+      "500": {
+        "description": "SERVER ERROR"
+      }
+    }
+  }
+}

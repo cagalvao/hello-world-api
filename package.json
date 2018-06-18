@@ -1,0 +1,62 @@
+{
+  "name": "hello-world-api",
+  "version": "1.0.0",
+  "description": "Starter Node Express.js API",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start index.js --no-daemon --watch",
+    "static_test": "standard",
+    "clear_swagger": "find ./swagger/volume/* ! -name README.md -type f | tac | xargs rm -rf",
+    "update_swagger": "rsync swagger/doc/* ./swagger/volume/",
+    "swagger": "npm run clear_swagger && node swagger/swagger.js && npm run update_swagger",
+    "test": "NODE_ENV=test node_modules/mocha/bin/_mocha --recursive **/*.spec.js && standard",
+    "coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha **/*.spec.js -- -u exports -R spec -b --recursive"
+  },
+  "author": "Cássio Galvão <cassio.galvao@outlook.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cagalvao/Timesheet.git"
+  },
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/cagalvao/hello-world-api/issues"
+  },
+  "homepage": "https://github.com/cagalvao/hello-world-api#readme",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-sorted": "^0.1.0",
+    "eslint": "^3.18.0",
+    "horaa": "^0.1.2-alpha",
+    "istanbul": "^1.1.0-alpha.1",
+    "json-refs": "^2.1.7",
+    "mocha": "^5.2.0",
+    "onchange": "^3.2.1",
+    "proxyquire": "^1.8.0",
+    "rewire": "^2.5.2",
+    "should": "^11.2.1",
+    "should-sinon": "0.0.5",
+    "sinon": "^2.1.0",
+    "standard": "10.0.3",
+    "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "async": "^2.2.0",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "cacheman": "^2.2.1",
+    "express": "^4.15.2",
+    "joi": "^10.5.2",
+    "lodash": "^4.17.10",
+    "pm2": "^2.4.6"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "before",
+      "afterEach",
+      "beforeEach",
+      "after"
+    ]
+  }
+}

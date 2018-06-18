@@ -1,0 +1,8 @@
+{
+  "/members": {
+    "$ref": "../membership_route/swagger/paths/GetMembers.json"
+  },
+  "/members/{id}": {
+    "$ref": "../membership_route/swagger/paths/GetMember.json"
+  }
+}

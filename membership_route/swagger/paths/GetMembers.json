@@ -1,0 +1,20 @@
+{
+    "get": {
+        "description": "Retorna a lista dos membros integrantes do ConfirmeNovo",
+        "parameters": [],
+        "responses": {
+            "200": {
+                "description": "SUCCESS",
+                "schema": {
+                    "$ref": "#/definitions/GetMembers"
+                }
+            },
+            "404": {
+                "description": "NOT FOUND"
+            },
+            "500": {
+                "description": "SERVER ERROR"
+            }
+        }
+    }
+}
